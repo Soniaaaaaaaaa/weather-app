@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/486b5ea274.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +10,30 @@
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+    <div class="card ">
+        <div class="main-part">
+                <form id="form">
+                  <div class="cntr">
+                    <input type="text" class="form-city" placeholder="Please enter the city:">
+                    <button type="submit" class="btn-search"><i class="fa-solid fa-location-dot search-icon"></i></button>
+                  </div>
+                  <div class="update">last updated: <span id="time"></span></div>
+                  <div class="city">city: Kyiv</div>
+                  <div class="container">
+                    <div class="part-1">
+                        <img src="" alt="" class="icon">
+                    </div>
+                    <div class="part-2">
+                      <spam id="ch-1"><span class="degree"></span><span class="units"><a href="#" id="unitC">°C</a> | <a href="#" id="unitF">°F</a></span></span>
+                      </div>
+                    <div class="part-3">
+                      <span id="ch_2"> humidity: <span id="hum"></span>%</span></p>
+                    <span id="ch_3"> wind: <span id="wind"></span>km/h</span></p>
+                    </div>
+                  </div>
+                </form>
+        </div>
+    </div>
     <script src="src/index.js"></script>
 </body>
 </html>
