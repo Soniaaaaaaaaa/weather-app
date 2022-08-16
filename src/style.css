@@ -5,7 +5,7 @@ body {
   display: block;
   margin: 15px auto;
   padding: 10px;
-  height: 220px;
+  height: 320px;
   width: 390px;
   border: 1px solid black;
   border-radius: 4px;
@@ -47,6 +47,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  max-height: 80px;
 }
 .part-1 {
   margin: 0;
@@ -87,4 +88,27 @@ body {
 }
 #link {
   text-align: center;
+}
+.weather-forecast {
+  color: black;
+}
+/* .col-2 {
+  text-align: center;
+} */
+.weather-forecast-date,
+.weather-forecast-temperatures-min {
+  opacity: 0.6;
+}
+.weather-forecast-date,
+.weather-forecast-temperatures {
+  font-size: 16px;
+}
+.weather-forecast-date {
+  text-align: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
