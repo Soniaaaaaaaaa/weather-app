@@ -57,49 +57,31 @@ function showTempAndCityAndHum(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   img.setAttribute("alt", response.data.weather[0].description);
-
   getForecast(response.data.coord);
 }
-let celsius = document.querySelector("#unitC");
-let celsiustemp = null;
-let fahrenheittemp = null;
-celsius.addEventListener("click", function (event) {
-  event.preventDefault();
-  if (degree.innerHTML !== "" && fahrenheittemp !== null) {
-    degree.innerHTML = celsiustemp;
-    celsius.style.color = "black";
-    fahrenheit.style.color = "purple";
-  }
-});
-let fahrenheit = document.querySelector("#unitF");
-fahrenheit.addEventListener("click", function (event) {
-  event.preventDefault();
-  if (degree.innerHTML !== "" && celsiustemp !== null) {
-    fahrenheittemp = Math.round((celsiustemp - 32) / 1.8);
-    degree.innerHTML = fahrenheittemp;
-    celsius.style.color = "purple";
-    fahrenheit.style.color = "black";
-  }
-});
 function displayForecact(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    let max = forecastDay.temp.max;
+    let min = forecastDay.temp.min;
+    if (index < 5) {
       forecastHTML += `       <div class="col-2">
                 <div class="weather-forecast-date">${formatDay(
                   forecastDay.dt
                 )}</div>
                 <img src="http://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
-                }@2x.png" alt="sunny" width="42"/><br/>
+                }@2x.png" alt="${
+        forecastDay.weather[0].description
+      }" width="50"/><br/>
                 <div class="weather-forecast-temperatures">
                   <span class="weather-forecast-temperatures-max">${Math.round(
-                    forecastDay.temp.max
+                    max
                   )}° </span>
                   <span class="weather-forecast-temperatures-min">${Math.round(
-                    forecastDay.temp.min
+                    min
                   )}°</span>
                 </div>
               </div>
