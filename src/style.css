@@ -23,7 +23,7 @@ body {
   border: 1px solid black;
   border-radius: 4px;
   height: 33px;
-  width: 75%;
+  width: 60%;
   padding-left: 15px;
   border: 1px solid black;
 }
@@ -35,6 +35,15 @@ body {
   border-radius: 4px;
   background-color: rgb(238, 200, 238);
 }
+.current {
+  font-size: 17px;
+  margin-left: 5px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: rgb(238, 200, 238);
+}
+
 .update {
   margin-top: 10px;
 }
